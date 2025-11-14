@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes de Suscripción - NoxTechs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="top">
+        <header>
+            <a href="index.html">
+                <img src="img/napster.png">
+                NoxTechs
+            </a>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="Caracteristicas.html">Caracteristicas</a>
+                <a href="contratar.html">Contratar</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+
+                <div id="carrito-icono-container">
+                    <span id="carrito-icono" title="Ver Carrito">🛒</span>
+                    <span id="contador-carrito">0</span>
+                </div>
+            </nav>
+
+        </header>
+
+        <h1>Planes de Suscripciones </h1>
+
+    </div>
+
+    <main>
+        <section id="contratar">
+
+            <article class="producto-card">
+                <h2>Básica</h2>
+                <div data-nombre="Plan Básica" data-precio="8000">$<span>8000</span> x mes</div>
+                <ul>
+                    <li>10% Lorem ipsum dolor,</li>
+                    <li> Lorem ipsum dolor,</li>
+                    <li>5% Lorem ipsum dolor,</li>
+                    <li> Lorem ipsum dolor,</li>
+                    <li>8% de descuento</li>
+                    <li> Lorem ipsum dolor,</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al Carrito</button>
+            </article>
+
+            <article class="producto-card">
+                <h2>Superior</h2>
+                <div data-nombre="Plan Superior" data-precio="45000" class="cta">$<span>45000</span> x mes</div>
+                <ul>
+                    <li>20% Lorem ipsum dolor,</li>
+                    <li> Lorem ipsum dolor,</li>
+                    <li>30% Lorem ipsum dolor,</li>
+                    <li> Lorem ipsum dolor,</li>
+                    <li> Lorem ipsum dolor,</li>
+                    <li> Lorem ipsum dolor,</li>
+                </ul>
+                <button class="agregar-carrito cta">Agregar al Carrito</button>
+            </article>
+
+            <article class="producto-card">
+                <h2>Media</h2>
+                <div data-nombre="Plan Media 1" data-precio="15000">$<span>15000</span> x mes</div>
+                <ul>
+                    <li>20% Lorem ipsum dolor,</li>
+                    <li> Lorem ipsum dolor,</li>
+                    <li>30% Lorem ipsum dolor,</li>
+                    <li> Lorem ipsum dolor,</li>
+                    <li> Lorem ipsum dolor,</li>
+                    <li> Lorem ipsum dolor,</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al Carrito</button>
+            </article>
+
+        </section>
+
+
+    </main>
+    <div id="bottom">
+        <footer>
+            <a href="index.html">
+                <img src="img/napster.png">
+                NoxTech
+            </a>
+            <div id="redes">
+                <a href="#">
+                    <img src="img/TIK TOK.png">
+                </a>
+                <a href="#">
+                    <img src="img/discordia.png">
+                </a>
+                <a href="#">
+                    <img src="img/TWCHIT.png">
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="panel-carrito">
+        <h3>Carrito de Compras</h3>
+        <ul id="lista-carrito">
+        </ul>
+        <hr>
+        <h4>Total: $<span id="total-carrito">0.00</span></h4>
+        <button id="comprar-btn">Finalizar Compra</button>
+        <button id="cerrar-carrito-btn" style="margin-top: 10px;">Cerrar</button>
+    </div>
+
+
+    <script>
+        // Array global para almacenar los ítems del carrito
+        let carrito = [];
+
+        // 1. SELECTORES DE ELEMENTOS DEL DOM
+        const contadorCarrito = document.getElementById('contador-carrito');
+        const listaCarrito = document.getElementById('lista-carrito');
+        const totalCarrito = document.getElementById('total-carrito');
+        const panelCarrito = document.getElementById('panel-carrito');
+        const botonCerrarCarrito = document.getElementById('cerrar-carrito-btn');
+        const iconoCarrito = document.getElementById('carrito-icono');
+        const botonesAgregar = document.querySelectorAll('.agregar-carrito');
+
+        // 2. FUNCIÓN PARA ACTUALIZAR EL HTML DEL CARRITO
+        function actualizarCarritoDOM() {
+            // A. Limpiar la lista actual
+            listaCarrito.innerHTML = '';
+            let total = 0;
+            let totalItems = 0;
+
+            // B. Iterar sobre el array 'carrito'
+            carrito.forEach((item, index) => {
+                // Sumar al total y al contador
+                total += item.precio * item.cantidad;
+                totalItems += item.cantidad;
+
+                // Crear elemento de lista para el ítem
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    ${item.nombre} - ${item.cantidad}x ($${item.precio.toFixed(2)})
+                    <button onclick="removerDelCarrito(${index})" style="margin-left: 10px; background: red; color: white; border: none; cursor: pointer;">X</button>
+                `;
+                listaCarrito.appendChild(li);
+            });
+
+            // C. Actualizar los marcadores (contador y total)
+            contadorCarrito.textContent = totalItems;
+            totalCarrito.textContent = total.toFixed(2);
+        }
+
+        // 3. FUNCIÓN PARA AGREGAR UN PLAN AL CARRITO
+        function agregarAlCarrito(event) {
+            // El botón está dentro de un <article> (la 'card' del producto)
+            const article = event.target.closest('.producto-card');
+
+            // Buscar el div que contiene el precio y los datos (asumiendo la estructura)
+            const dataDiv = article.querySelector('div[data-nombre]');
+
+            if (!dataDiv) {
+                console.error("No se encontró el div con los atributos de datos.");
+                return;
+            }
+
+            const nombre = dataDiv.dataset.nombre; // Lee el atributo data-nombre
+            const precio = parseFloat(dataDiv.dataset.precio); // Lee el atributo data-precio
+
+            // Verificar si el ítem ya existe en el carrito
+            const itemExistente = carrito.find(item => item.nombre === nombre);
+
+            if (itemExistente) {
+                // Si existe, solo incrementa la cantidad
+                itemExistente.cantidad++;
+            } else {
+                // Si no existe, agregarlo como nuevo ítem
+                carrito.push({
+                    nombre: nombre,
+                    precio: precio,
+                    cantidad: 1
+                });
+            }
+
+            // Actualizar la vista del carrito
+            actualizarCarritoDOM();
+
+            // Mostrar un mensaje de éxito (opcional)
+            alert(`"${nombre}" agregado al carrito!`);
+
+            // Abrir el panel del carrito
+            panelCarrito.classList.add('visible');
+        }
+
+        // 4. FUNCIÓN PARA REMOVER UN PLAN DEL CARRITO (opcional pero muy útil)
+        function removerDelCarrito(index) {
+            // Reducir la cantidad o eliminar el ítem completamente
+            if (carrito[index].cantidad > 1) {
+                carrito[index].cantidad--;
+            } else {
+                carrito.splice(index, 1); // Elimina el ítem del array
+            }
+            actualizarCarritoDOM();
+        }
+
+        // 5. EVENT LISTENERS
+
+        // Asignar la función 'agregarAlCarrito' a todos los botones 'Agregar al Carrito'
+        botonesAgregar.forEach(button => {
+            button.addEventListener('click', agregarAlCarrito);
+        });
+
+        // Mostrar/Ocultar el panel del carrito
+        iconoCarrito.addEventListener('click', () => {
+            panelCarrito.classList.toggle('visible');
+        });
+
+        botonCerrarCarrito.addEventListener('click', () => {
+            panelCarrito.classList.remove('visible');
+        });
+
+        // Simular la acción de comprar (puedes enlazar esto a una pasarela de pago real)
+        document.getElementById('comprar-btn').addEventListener('click', () => {
+            if (carrito.length === 0) {
+                alert("Tu carrito está vacío. Agrega planes antes de comprar.");
+            } else {
+                alert(`¡Compra finalizada! Total a pagar: $${totalCarrito.textContent}. Gracias por contratar con NoxTechs. te estaremos embiando la factura por gmail`);
+                // Opcional: Vaciar el carrito después de la compra
+                carrito = [];
+                actualizarCarritoDOM();
+                panelCarrito.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+
+</html>

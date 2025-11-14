@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #707070;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 600;
+}
+
+#top {
+    min-height: 250px;
+    background: rgb(215, 143, 183);
+    background: linear-gradient(90deg, rgba(215, 143, 183, 1) 0%, rgba(201, 185, 241, 1) 100%);
+}
+
+header {
+    width: 90%;
+    /* Ajuste a porcentaje */
+    max-width: 1100px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a img {
+    width: 56px;
+    vertical-align: middle;
+
+}
+
+header a {
+    color: #FFF;
+    font-size: 1.125rem;
+    /* 18px */
+    font-weight: 600;
+}
+
+header nav a {
+    padding: 14px;
+}
+
+#top h1 {
+    width: 90%;
+    /* Ajuste a porcentaje */
+    max-width: 1100px;
+    margin: 53px auto 0px auto;
+    font-size: 2rem;
+    /* 32px */
+    font-weight: 600;
+    color: #fff;
+}
+
+
+/* ## heroIndex ## */
+#heroIndex {
+    width: 90%;
+    /* Ajuste a porcentaje */
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Para que se apilen en móvil */
+}
+
+#heroIndex article {
+    width: 630px;
+    max-width: 100%;
+    /* Asegura que no se desborde */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 20px 0;
+    /* Ajuste de margen */
+}
+
+#heroIndex article p {
+    width: 100%;
+    color: #fff;
+    margin: 1.5rem 0px 3rem 0px;
+    /* 24px 0px 48px 0px */
+}
+
+#heroIndex img {
+    max-width: 100%;
+    /* Imágenes responsive */
+    height: auto;
+    margin: 60px 0;
+    /* Ajuste de margen */
+}
+
+#heroIndex article a {
+    color: #fff;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 32px;
+    padding: 0.5rem 0;
+    /* 8px 0px */
+    width: 45%;
+    /* Ajuste para que quepan dos */
+    min-width: 210px;
+    display: inline-block;
+    transition: 300ms;
+    margin: 10px 0;
+}
+
+#heroIndex article a:hover {
+    background-color: #fff;
+    color: rgb(215, 143, 183);
+}
+
+main {
+    min-height: 600px;
+    padding: 20px 0;
+}
+
+/* ##  sección index ## */
+#heroImg {
+    width: 90%;
+    /* Ajuste a porcentaje */
+    max-width: 1100px;
+    margin: 50px auto;
+    /* Ajuste de margen */
+    display: flex;
+    justify-content: space-around;
+    /* Cambiado a space-around */
+    flex-wrap: wrap;
+    /* Para que se apilen en móvil */
+}
+
+#heroImg>div {
+    flex-basis: 30%;
+    /* Para que quepan 3 en desktop */
+    min-width: 250px;
+    /* Asegura un mínimo en móvil */
+    margin: 20px 0;
+    text-align: center;
+}
+
+#heroImg img {
+    margin-top: 0;
+    width: 72px;
+    margin-left: 0;
+    /* Eliminado margen fijo */
+}
+
+#heroImg p {
+    font-weight: 600;
+    text-align: center;
+}
+
+#heroImg h2 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    /* 20px */
+    margin: 20px 0;
+    text-align: center;
+}
+
+#bottom {
+    background-color: #262626;
+    height: auto;
+    /* Cambiado a auto */
+    padding: 20px 0;
+    /* Agregado padding */
+    display: flex;
+    align-items: center;
+}
+
+/* ## sección nosotros ## */
+#nosotros {
+    width: 90%;
+    /* Ajuste a porcentaje */
+    max-width: 1100px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+    /* Cambiado a space-around */
+    flex-wrap: wrap;
+    /* Para que se apilen en móvil */
+}
+
+#nosotros article {
+    text-align: center;
+    margin: 20px;
+    /* Margen para separación */
+    flex-basis: 40%;
+    /* Dos columnas en pantallas medianas */
+    min-width: 250px;
+    /* Asegura un mínimo en móvil */
+}
+
+#nosotros article img {
+    width: 100%;
+    max-width: 245px;
+    height: auto;
+}
+
+#nosotros article strong {
+    display: block;
+    margin: 0.5rem 0px;
+    /* 8px 0px */
+}
+
+/* ## sección caractetistivas ## */
+#app {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Para que se apilen en móvil */
+}
+
+#app img {
+    max-width: 100%;
+    /* Imágenes responsive */
+    height: auto;
+    flex-basis: 45%;
+    /* Espacio en escritorio */
+    min-width: 300px;
+    /* Mínimo en móvil */
+}
+
+#app article {
+    width: 100%;
+    /* Tomará el ancho completo en móvil */
+    max-width: 580px;
+    flex-basis: 50%;
+    /* Espacio en escritorio */
+    margin-top: 20px;
+}
+
+#app article p {
+    margin: 1rem 0;
+    /* 16px 0px */
+}
+
+#caracteristicas {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    /* Cambiado a space-around */
+    flex-wrap: wrap;
+}
+
+#caracteristicas article {
+    width: 100%;
+    max-width: 326px;
+    margin: 32px 0;
+}
+
+
+
+#caracteristicas p {
+    text-align: justify;
+    margin: 1.25rem 0;
+    /* 20px 0px */
+}
+
+
+
+/* ## sección contratar ## */
+#contratar {
+    width: 90%;
+    max-width: 1100px;
+    margin: 64px auto;
+    display: flex;
+    justify-content: space-around;
+    /* Cambiado a space-around */
+    flex-wrap: wrap;
+    /* Para que se apilen en móvil */
+}
+
+#contratar article {
+    width: 100%;
+    max-width: 326px;
+    text-align: center;
+    padding: 32px 0;
+    border-radius: 12px;
+    box-shadow: 0px 0px 12px #c8c8c8;
+    margin: 20px;
+    /* Margen para separación */
+}
+
+#contratar div {
+    background-color: #f8f8f8;
+    margin: 1.5rem 0;
+    /* 24px 0 */
+    padding: 0.5rem 0;
+    /* 8px 0px */
+}
+
+#contratar span {
+    font-size: 2rem;
+    /* 32px */
+    font-weight: 600;
+}
+
+#contratar li {
+    list-style-type: none;
+    line-height: 2;
+}
+
+#contratar a {
+    padding: 8px 40px;
+    border: 1px solid #707070;
+    border-radius: 18px;
+    display: inline-block;
+    margin-top: 1.5rem;
+    /* 24px */
+    color: #707070;
+    transition: 300ms;
+}
+
+#contratar a:hover {
+    background-color: #323232;
+    color: #fff;
+}
+
+.cta {
+    color: #fff !important;
+    background: linear-gradient(90deg, rgba(215, 143, 183, 1) 0%, rgba(201, 185, 241, 1) 100%);
+}
+
+/* ##  seccion contacto ## */
+#contacto section {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 16px;
+    padding: 30px;
+    /* Ajuste de padding */
+    flex-wrap: wrap;
+    /* Para que se apilen en móvil */
+}
+
+#contacto form {
+    width: 100%;
+    max-width: 550px;
+}
+
+#contacto input,
+#contacto textarea,
+#contacto button {
+    font-family: Raleway, sans-serif;
+    background-color: #F4F4F4;
+    width: 100%;
+    /* Ancho completo */
+    padding: 1rem;
+    /* 16px */
+    border: none;
+    box-shadow: 0px 0px 3px #999;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    /* 32px */
+}
+
+#contacto textarea {
+    height: 152px;
+    resize: vertical;
+}
+
+#contacto button {
+    background-color: #444444;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#contacto button:hover {
+    background-color: #323232;
+}
+
+#contacto article {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+}
+
+#contacto article {
+    background-color: #F4F4F4;
+    border-radius: 12px;
+    width: 250px;
+    height: 316px;
+    text-align: center;
+}
+
+#contacto section article img {
+    width: 72px;
+    padding: 8px;
+    border: 1px solid #323232;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 20px 0 12px 0;
+}
+
+#contacto article span {
+    display: block;
+}
+
+/* ##  footer ## */
+/* ##  footer ## */
+footer {
+    width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer img {
+    width: 35px;
+    vertical-align: middle;
+}
+
+footer a {
+    color: #fff;
+    font-size: 18px;
+}
+
+#redes a img {
+    width: 33px;
+    margin: 8px;
+}
+
+#redes {
+    margin-top: 10px;
+}
+
+#redes a img {
+    width: 33px;
+    margin: 8px;
+}
+
+
+
+
+#carrito-icono-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#carrito-icono {
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    /* Asumiendo que tu barra de navegación tiene fondo oscuro */
+    text-decoration: none;
+}
+
+#contador-carrito {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+#panel-carrito {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+#panel-carrito.visible {
+    transform: translateX(0);
+}
+
+.producto-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
