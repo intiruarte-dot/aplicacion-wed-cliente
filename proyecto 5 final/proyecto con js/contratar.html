@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes de Suscripción - NoxTechs</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="top">
+        <header>
+            <a href="index.html">
+                <img src="img/napster.png">
+                NoxTechs
+            </a>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="Caracteristicas.html">Caracteristicas</a>
+                <a href="contratar.html">Contratar</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+
+                <div id="carrito-icono-container">
+                    <span id="carrito-icono" title="Ver Carrito">🛒</span>
+                    <span id="contador-carrito">0</span>
+                </div>
+            </nav>
+
+        </header>
+
+        <h1>Planes de Suscripciones </h1>
+
+    </div>
+
+    <main>
+
+        <div class="buscador-container">
+            <label for="buscador">Buscar planes:</label>
+            <input type="text" id="buscador" onkeyup="filtrarPlanes()" placeholder="BUSCA POR PRECIO O PLAN">
+        </div>
+
+        <section id="contratar">
+
+            <article class="producto-card">
+                <h2>Inicio</h2>
+                <div data-nombre="Plan Inicio" data-precio="8000">$<span>8000</span> x mes</div>
+                <ul>
+                    <li>**10%** de descuento en tu primera compra.</li>
+                    <li>Acceso a **50** plantillas base.</li>
+                    <li>Soporte técnico por Email (48 horas).</li>
+                    <li>Capacidad de 1 GB de almacenamiento.</li>
+                    <li>Actualizaciones de software básicas.</li>
+                    <li>Uso para **1 usuario**.</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al Carrito</button>
+            </article>
+
+            <article class="producto-card destacado">
+                <h2>Superior</h2>
+                <div data-nombre="Plan Superior" data-precio="45000" class="cta">$<span>45000</span> x mes</div>
+                <ul>
+                    <li>**Acceso total** a la librería de recursos.</li>
+                    <li>**Asesoría personalizada** por videoconferencia.</li>
+                    <li>**Soporte Premium 24/7** (Chat y teléfono).</li>
+                    <li>Capacidad de 50 GB de almacenamiento.</li>
+                    <li>**Integración** con herramientas externas (API).</li>
+                    <li>Uso para **5 usuarios**.</li>
+                </ul>
+                <button class="agregar-carrito cta">Agregar al Carrito</button>
+            </article>
+
+            <article class="producto-card">
+                <h2>Media Pro</h2>
+                <div data-nombre="Plan Media Pro" data-precio="15000">$<span>15000</span> x mes</div>
+                <ul>
+                    <li>**20%** de descuento en todos los complementos.</li>
+                    <li>Acceso a **150** plantillas premium.</li>
+                    <li>Soporte técnico por Chat (12 horas).</li>
+                    <li>Capacidad de 5 GB de almacenamiento.</li>
+                    <li>Actualizaciones de software avanzadas.</li>
+                    <li>Uso para **2 usuarios**.</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al Carrito</button>
+            </article>
+
+            <article class="producto-card">
+                <h2>Flexible</h2>
+                <div data-nombre="Plan Flexible" data-precio="10000">$<span>10000</span> x mes</div>
+                <ul>
+                    <li>**Sin compromiso de permanencia** (Cancele cuando quiera).</li>
+                    <li>Acceso a **75** plantillas base y premium.</li>
+                    <li>Soporte técnico por Email (24 horas).</li>
+                    <li>Capacidad de 2 GB de almacenamiento.</li>
+                    <li>Garantía de devolución de 30 días.</li>
+                    <li>Uso para **1 usuario**.</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al Carrito</button>
+            </article>
+
+
+            <article class="producto-card destacado-medio">
+                <h2>Pro</h2>
+                <div data-nombre="Plan Pro" data-precio="18000">$<span>18000</span> x mes</div>
+                <ul>
+                    <li>**30%** de descuento en la primera suscripción.</li>
+                    <li>Acceso completo a la librería de plantillas.</li>
+                    <li>Soporte técnico por Chat **Prioritario** (6 horas).</li>
+                    <li>Capacidad de 10 GB de almacenamiento.</li>
+                    <li>**Reportes de uso** mensuales detallados.</li>
+                    <li>Uso para **3 usuarios**.</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al Carrito</button>
+            </article>
+
+
+            <article class="producto-card">
+                <h2>Pro Plus</h2>
+                <div data-nombre="Plan Pro Plus" data-precio="25000">$<span>25000</span> x mes</div>
+                <ul>
+                    <li>**40%** de descuento en servicios de terceros asociados.</li>
+                    <li>Todas las características del Plan Pro.</li>
+                    <li>Soporte técnico por **Teléfono** y Chat (Prioridad alta).</li>
+                    <li>Capacidad de 20 GB de almacenamiento.</li>
+                    <li>**Automatizaciones** de flujo de trabajo básicas.</li>
+                    <li>Uso para **5 usuarios**.</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al Carrito</button>
+            </article>
+
+
+            <article class="producto-card ahorro">
+                <h2>Ahorro Anual</h2>
+                <div data-nombre="Plan Anual" data-precio="150000">$<span>150000</span> x año</div>
+                <ul>
+                    <li>**Ahorre 2 meses** de suscripción (Equivalente al plan Media Pro).</li>
+                    <li>Acceso al Plan Media Pro por 12 meses.</li>
+                    <li>Soporte técnico por Chat.</li>
+                    <li>Capacidad de 5 GB de almacenamiento.</li>
+                    <li>Licencia de **2 usuarios** por un año completo.</li>
+                    <li>**Bonus exclusivo** al renovar.</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al Carrito</button>
+            </article>
+
+            <article class="producto-card">
+                <h2>Empresarial</h2>
+                <div data-nombre="Plan Empresarial" data-precio="75000">$<span>75000</span> x mes</div>
+                <ul>
+                    <li>**Consultoría** estratégica de 2 horas al mes.</li>
+                    <li>Todas las características del Plan Superior.</li>
+                    <li>**Soporte dedicado** con gestor de cuenta.</li>
+                    <li>Capacidad de 100 GB de almacenamiento.</li>
+                    <li>**Automatizaciones** de flujo de trabajo avanzadas.</li>
+                    <li>Uso para **10 usuarios**.</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al Carrito</button>
+            </article>
+
+            <article class="producto-card vip">
+                <h2>Élite VIP</h2>
+                <div data-nombre="Plan Élite VIP" data-precio="99000">$<span>99000</span> x mes</div>
+                <ul>
+                    <li>**Servicios a medida** y desarrollos exclusivos.</li>
+                    <li>Todas las características del Plan Empresarial.</li>
+                    <li>**Garantía de Respuesta** de 1 hora.</li>
+                    <li>Almacenamiento **Ilimitado**.</li>
+                    <li>Capacitación en sitio para tu equipo.</li>
+                    <li>Uso para **usuarios ilimitados**.</li>
+                </ul>
+                <button class="agregar-carrito">Agregar al Carrito</button>
+            </article>
+
+        </section>
+
+    </main>
+    <div id="bottom">
+        <footer>
+            <a href="index.html">
+                <img src="img/napster.png">
+                NoxTech
+            </a>
+            <div id="redes">
+                <a href="#">
+                    <img src="img/TIK TOK.png">
+                </a>
+                <a href="#">
+                    <img src="img/discordia.png">
+                </a>
+                <a href="#">
+                    <img src="img/TWCHIT.png">
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="panel-carrito">
+        <h3>Carrito de Compras</h3>
+        <ul id="lista-carrito">
+        </ul>
+        <hr>
+        <h4>Total: $<span id="total-carrito">0.00</span></h4>
+        <button id="comprar-btn">Finalizar Compra</button>
+        <button id="cerrar-carrito-btn" style="margin-top: 10px;">Cerrar</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
